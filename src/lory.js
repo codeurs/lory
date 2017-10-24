@@ -397,12 +397,12 @@ export function lory (slider, opts) {
 
         if (enableMouseEvents) {
             frame.addEventListener('mousemove', onTouchmove);
-            frame.addEventListener('mouseup', onTouchend);
+            options.window.addEventListener('mouseup', onTouchend);
             frame.addEventListener('mouseleave', onTouchend);
         }
 
         frame.addEventListener('touchmove', onTouchmove);
-        frame.addEventListener('touchend', onTouchend);
+        options.window.addEventListener('touchend', onTouchend);
 
         const {pageX, pageY} = touches;
 
