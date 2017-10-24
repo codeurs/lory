@@ -495,9 +495,9 @@ export function lory (slider, opts) {
          * remove eventlisteners after swipe attempt
          */
         frame.removeEventListener('touchmove', onTouchmove);
-        frame.removeEventListener('touchend', onTouchend);
+        options.window.removeEventListener('touchend', onTouchend);
         frame.removeEventListener('mousemove', onTouchmove);
-        frame.removeEventListener('mouseup', onTouchend);
+        options.window.removeEventListener('mouseup', onTouchend);
         frame.removeEventListener('mouseleave', onTouchend);
 
         dispatchSliderEvent('on', 'touchend', {

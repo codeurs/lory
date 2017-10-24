@@ -489,12 +489,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	        if (enableMouseEvents) {
 	            frame.addEventListener('mousemove', onTouchmove);
-	            frame.addEventListener('mouseup', onTouchend);
+	            options.window.addEventListener('mouseup', onTouchend);
 	            frame.addEventListener('mouseleave', onTouchend);
 	        }
 	
 	        frame.addEventListener('touchmove', onTouchmove);
-	        frame.addEventListener('touchend', onTouchend);
+	        options.window.addEventListener('touchend', onTouchend);
 	
 	        var pageX = touches.pageX,
 	            pageY = touches.pageY;
@@ -588,9 +588,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	         * remove eventlisteners after swipe attempt
 	         */
 	        frame.removeEventListener('touchmove', onTouchmove);
-	        frame.removeEventListener('touchend', onTouchend);
+	        options.window.removeEventListener('touchend', onTouchend);
 	        frame.removeEventListener('mousemove', onTouchmove);
-	        frame.removeEventListener('mouseup', onTouchend);
+	        options.window.removeEventListener('mouseup', onTouchend);
 	        frame.removeEventListener('mouseleave', onTouchend);
 	
 	        dispatchSliderEvent('on', 'touchend', {
